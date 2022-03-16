@@ -704,6 +704,25 @@
                 <span class="seconds">55</span>
                 <span>Seconds</span>
               </div>
+               <script>
+              let hours = document.querySelector(".unit .hours");
+              let myMin = document.querySelector(".unit .minutes");
+              let mySec = document.querySelector(".unit .seconds");
+              function count() {
+                setInterval(function () {
+                  mySec.innerHTML -= 1;
+                  if (mySec.innerHTML === "0") {
+                    myMin.innerHTML -= 1;
+                    mySec.innerHTML = 60;
+                  }
+                  if (myMin.innerHTML === "0") {
+                    hours.innerHTML = -1;
+                    myMin.innerHTML = 60;
+                  }
+                }, 1000);
+              }
+              window.addEventListener("load", count);
+            </script>
             </div>
             <h2 class="title">Tech Masters Event 2021</h2>
             <p class="description">
